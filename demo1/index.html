@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>demo1-twoSum</title>
+  </head>
+  <body>
+    <script>
+    // var twoSum = function(nums, target) {
+    //   for(var i = 0; i < nums.length; i++){
+    //     for(var j = 0; j < nums.length; j++){
+    //       if(i != j){
+    //         if(nums[i] + nums[j] == target) {
+    //           return [i, j];
+    //         }
+    //       }
+    //     }
+    //   }
+    // };
+    // console.log(twoSum([11, 20, 2, 70, 9, 7], 9));
+
+
+    var twoSum = (arr, target) => {
+      for(var i = 0; i < arr.length; i++){
+        var diffValue = target - arr[i];
+        var index = arr.indexOf(diffValue);
+        if(index > -1 && arr.indexOf(index) != i) {
+          return [i, index];
+        }
+      }
+    }
+    console.log(twoSum([14, 2, 5, 4], 6));
+
+    </script>
+  </body>
+</html>
