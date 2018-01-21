@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+  </head>
+  <body>
+    <script>
+    // 123->321
+    // -124->-421
+    // 120->21
+    // 1224->4221
+    // 102->201
+    var reverse = function(x) {
+      var arr = x.toString().split('');
+      var result = 0;
+      if(x > Math.pow(2, 31) || x < -2147483648){
+        return 0;
+      }
+      if(+x < 0){
+        arr.splice(0, 1);
+        result = -arr.reverse().join('');
+        if(result < -2147483648){
+          return 0;
+        }
+        return result;
+      }
+
+      if(+arr[arr.length - 1] == 0){
+        arr.splice(arr.length - 1, 1);
+      }
+      result = +arr.reverse().join('');
+      if(result > Math.pow(2, 31)){
+        return 0;
+      }
+      return result;
+    };
+    console.log(reverse(-32690))
+    </script>
+  </body>
+</html>
+
+
+
