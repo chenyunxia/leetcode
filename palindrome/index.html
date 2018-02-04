@@ -1,0 +1,31 @@
+<html>
+	<body>
+		<script>
+			/**
+			 * @param {number} x
+			 * @return {boolean}
+			 */
+			// var isPalindrome = function(x) {
+			// 	x = x.toString();
+		 //    let defaultNum = [...x].toString();
+		 //    let resultNum = [...x].reverse().toString();
+
+		 //    if(defaultNum !== resultNum) {
+		 //    	return false;
+		 //    }
+		 //    return true;			    
+			// };
+
+			var isPalindrome = function(x){
+				x = x.toString();
+				for(let i = 0, len = parseInt(x.length / 2); i < len; i++){
+					if(x[i] !== x[x.length - 1 - i]){
+						return false;
+					}
+				}
+				return true;
+			}
+			console.log(isPalindrome(2));
+		</script>
+	</body>
+</html>
